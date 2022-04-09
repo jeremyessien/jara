@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-const kPrimaryColor = Color(0xff0063b8);
-const kPrimaryLightColor = Color(0xFFFFECDF);
+const kGreen = Color(0xff009933);
+const kWhite = Color(0xffFFFFFF);
+const kRed = Color(0xffF82020);
+const kBlue = Color(0xff3A77EE);
+const kPurple = Color(0xff6039F1);
+
+const kBlack = Color(0xff00000);
+const kGrey = Color(0xffC4C4C4);
+
+final kGreenLight = Color(0xFF009933).withOpacity(0.5);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
@@ -38,16 +46,33 @@ const String kNamelNullError = "Please Enter your name";
 const String kPhoneNumberNullError = "Please Enter your phone number";
 const String kAddressNullError = "Please Enter your address";
 
-// final otpInputDecoration = InputDecoration(
-//   contentPadding: EdgeInsets.symmetric(vertical: 15.h),
-//   border: outlineInputBorder(),
-//   focusedBorder: outlineInputBorder(),
-//   enabledBorder: outlineInputBorder(),
-// );
+final textFieldDecoration = InputDecoration(
+  labelStyle: const TextStyle(
+    color: kGrey,
+  ),
+  hintStyle: const TextStyle(
+    color: kGrey,
+  ),
+  // floatingLabelBehavior: FloatingLabelAlignment.,
+  floatingLabelStyle: const TextStyle(
+    color: kGrey,
+  ),
+  contentPadding: EdgeInsets.symmetric(vertical: 15.h),
+  border: outlineInputBorder(),
+  focusedBorder: outlineInputBorder(),
+  enabledBorder: enabledInputBorder(),
+);
 
-// OutlineInputBorder outlineInputBorder() {
-//   return OutlineInputBorder(
-//     borderRadius: BorderRadius.circular(10),
-//     borderSide: const BorderSide(color: Colors.white),
-//   );
-// }
+OutlineInputBorder enabledInputBorder() {
+  return OutlineInputBorder(
+    borderRadius: BorderRadius.circular(4),
+    borderSide: const BorderSide(color: kGreen),
+  );
+}
+
+OutlineInputBorder outlineInputBorder() {
+  return OutlineInputBorder(
+    borderRadius: BorderRadius.circular(4),
+    borderSide: const BorderSide(color: kGrey),
+  );
+}
