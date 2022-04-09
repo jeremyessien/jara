@@ -12,6 +12,7 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
+  bool isOpen = false;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -39,6 +40,15 @@ class _SignUpFormState extends State<SignUpForm> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              // Radio(
+              //     value: 1,
+              //     groupValue: isOpen,
+              //     onChanged: (value) {
+              //       setState(() {
+              //       isOpen = value;
+
+              //       });
+              //     }),
               const Text('I have a referral code'),
               GestureDetector(
                   onTap: () {}, child: const Text('Forgot Password')),
