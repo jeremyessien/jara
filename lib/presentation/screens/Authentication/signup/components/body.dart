@@ -4,7 +4,7 @@ import 'package:jara/presentation/screens/signup/components/signUpForm.dart';
 import 'package:jara/presentation/widgets/defaultBtn.dart';
 import 'package:jara/presentation/widgets/textDivider.dart';
 
-import '../../../helpers/constants.dart';
+import '../../../../helpers/constants.dart';
 
 class SignUpBody extends StatefulWidget {
   const SignUpBody({Key? key}) : super(key: key);
@@ -21,6 +21,9 @@ class _SignUpBodyState extends State<SignUpBody> {
       padding: EdgeInsets.symmetric(horizontal: kPadding),
       child: Column(
         children: [
+          SizedBox(
+            height: 40.h,
+          ),
           Image.asset('assets/logo.png'),
           SizedBox(
             height: 30.h,

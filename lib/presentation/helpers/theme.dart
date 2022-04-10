@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'constants.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 ThemeData theme() {
   return ThemeData(
@@ -32,14 +31,20 @@ InputDecorationTheme inputDecorationTheme() {
 
 TextTheme textTheme() {
   return const TextTheme(
-    bodyText1: TextStyle(color: kTextColor),
-    bodyText2: TextStyle(color: kTextColor),
+    bodyText1: TextStyle(color: kBlack),
+    bodyText2: TextStyle(color: kBlack),
   );
 }
 
 AppBarTheme appBarTheme() {
-  return const AppBarTheme(
-    color: Colors.white,
+  return AppBarTheme(
+    color: kWhite,
+    titleTextStyle: TextStyle(
+      color: kBlack,
+      fontSize: 18.sp,
+      fontWeight: FontWeight.bold,
+    ),
+    centerTitle: true,
     elevation: 0,
     iconTheme: IconThemeData(color: kGreen),
   );

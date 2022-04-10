@@ -1,6 +1,6 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:get/get.dart';
 import 'components/body.dart';
 
 class ForgotPassword extends StatelessWidget {
@@ -10,9 +10,11 @@ class ForgotPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: SvgPicture.asset('assets/back.svg'),
+        leading: IconButton(
+            onPressed: () => Get.back(),
+            icon: const Icon(Icons.arrow_back_ios_new_rounded)),
       ),
-      body: ForgotBody(),
+      body: const ForgotBody(),
     );
   }
 }

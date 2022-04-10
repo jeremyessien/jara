@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jara/presentation/screens/resetPassword/components/resetForm.dart';
 
-import '../../../helpers/constants.dart';
+import '../../../../helpers/constants.dart';
+import 'resetForm.dart';
 
 class ResetBody extends StatefulWidget {
   const ResetBody({Key? key}) : super(key: key);
@@ -26,22 +26,19 @@ class _ResetBodyState extends State<ResetBody> {
           SizedBox(
             height: 30.h,
           ),
-          const Text(
+          Text(
             'Reset your password',
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.sp),
           ),
           SizedBox(
             height: 10.h,
           ),
           Text(
             'Kindly input your password details',
-            style: TextStyle(fontSize: 14.sp),
+            style: TextStyle(fontSize: 13.sp),
           ),
           SizedBox(
-            height: 30.h,
-          ),
-          SizedBox(
-            height: 30.h,
+            height: 70.h,
           ),
           const ResetForm(),
         ],

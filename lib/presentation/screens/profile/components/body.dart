@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jara/presentation/helpers/constants.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jara/presentation/widgets/defaultBtn.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfileBody extends StatefulWidget {
   const ProfileBody({Key? key}) : super(key: key);
@@ -19,21 +20,29 @@ class _ProfileBodyState extends State<ProfileBody> {
         child: Form(
           child: Column(
             children: [
-              Image.asset('editProfile'),
+              SizedBox(
+                height: 30.h,
+              ),
+              SvgPicture.asset('assets/editProfile.svg'),
               SizedBox(
                 height: 30.h,
               ),
               Row(
                 children: [
-                  TextFormField(
-                    decoration:
-                        const InputDecoration(label: Text('First name')),
+                  Expanded(
+                    child: TextFormField(
+                      decoration:
+                          const InputDecoration(label: Text('First name')),
+                    ),
                   ),
                   SizedBox(
                     width: 10.w,
                   ),
-                  TextFormField(
-                    decoration: const InputDecoration(label: Text('Last name')),
+                  Expanded(
+                    child: TextFormField(
+                      decoration:
+                          const InputDecoration(label: Text('Last name')),
+                    ),
                   ),
                 ],
               ),
@@ -68,6 +77,9 @@ class _ProfileBodyState extends State<ProfileBody> {
               TextFormField(
                 decoration:
                     const InputDecoration(label: Text('Input your response')),
+              ),
+              SizedBox(
+                height: 40.h,
               ),
               DefaultBtn(
                 press: () {},

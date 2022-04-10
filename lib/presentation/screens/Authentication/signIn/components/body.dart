@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jara/presentation/screens/signIn/components/signInForm.dart';
-import 'package:jara/presentation/screens/signup/components/signUpForm.dart';
-import 'package:jara/presentation/widgets/defaultBtn.dart';
-import 'package:jara/presentation/widgets/textDivider.dart';
+import 'package:jara/presentation/screens/Authentication/signIn/components/signInForm.dart';
 
-import '../../../helpers/constants.dart';
+import '../../../../helpers/constants.dart';
 
 class SignInBody extends StatefulWidget {
   const SignInBody({Key? key}) : super(key: key);
@@ -23,28 +20,26 @@ class _SignInBodyState extends State<SignInBody> {
       child: Column(
         children: [
           SizedBox(
-            height: 20.h,
+            height: 40.h,
           ),
           Image.asset('assets/logo.png'),
           SizedBox(
-            height: 30.h,
+            height: MediaQuery.of(context).size.height * 0.1,
           ),
-          const Text(
+          Text(
             'Login',
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
           ),
           SizedBox(
-            height: 10.h,
+            height: 15.h,
           ),
           Text(
             'Input your email address and password in order to access Jara.',
-            style: TextStyle(fontSize: 14.sp),
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 12.sp),
           ),
           SizedBox(
-            height: 30.h,
-          ),
-          SizedBox(
-            height: 30.h,
+            height: 40.h,
           ),
           const SignInForm(),
         ],

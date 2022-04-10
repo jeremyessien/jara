@@ -9,6 +9,7 @@ class Profile extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profile'),
+        elevation: 0.5,
       ),
       body: const ProfileBody(),
     );

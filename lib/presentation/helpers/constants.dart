@@ -10,7 +10,7 @@ const kPurple = Color(0xff6039F1);
 const kBlack = Color(0xff000000);
 const kGrey = Color(0xffC4C4C4);
 
-final kGreenLight = Color(0xFF009933).withOpacity(0.5);
+final kGreenLight = const Color(0xFF009933).withOpacity(0.5);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,

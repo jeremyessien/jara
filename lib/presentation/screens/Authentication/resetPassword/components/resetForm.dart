@@ -34,7 +34,7 @@ class _ResetFormState extends State<ResetForm> {
             ),
           ),
           SizedBox(
-            height: 30.h,
+            height: 60.h,
           ),
           DefaultBtn(
             press: () {},

@@ -25,17 +25,24 @@ class _SignInFormState extends State<SignInForm> {
             ),
           ),
           SizedBox(
-            height: 10.h,
+            height: 15.h,
           ),
           TextFormField(
             keyboardType: TextInputType.visiblePassword,
             decoration: InputDecoration(
               label: const Text('Password'),
-              suffixIcon: SvgPicture.asset('assets/eye.svg'),
+              suffixIcon: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.remove_red_eye_sharp,
+                  color: kGrey,
+                  size: 30.h,
+                ),
+              ),
             ),
           ),
           SizedBox(
-            height: 5.h,
+            height: 30.h,
           ),
           DefaultBtn(
             press: () {},
@@ -45,14 +52,6 @@ class _SignInFormState extends State<SignInForm> {
           SizedBox(
             height: 5.h,
           ),
-          const Text.rich(
-            TextSpan(
-              text: 'Already Signed Up?',
-              children: [
-                TextSpan(text: 'Log In', style: TextStyle(color: kPurple)),
-              ],
-            ),
-          )
         ],
       ),
     );
