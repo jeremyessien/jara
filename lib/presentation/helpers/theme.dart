@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'constants.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 ThemeData theme() {
   return ThemeData(
     scaffoldBackgroundColor: Colors.white,
-    // fontFamily: "Muli",
+    fontFamily: 'Montserrat',
     appBarTheme: appBarTheme(),
     textTheme: textTheme(),
     inputDecorationTheme: inputDecorationTheme(),
@@ -15,14 +16,15 @@ ThemeData theme() {
 
 InputDecorationTheme inputDecorationTheme() {
   OutlineInputBorder outlineInputBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(4),
+    borderRadius: BorderRadius.circular(8),
     borderSide: const BorderSide(color: kGrey),
     gapPadding: 10,
   );
   return InputDecorationTheme(
-    floatingLabelBehavior: FloatingLabelBehavior.always,
-    contentPadding: EdgeInsets.symmetric(horizontal: 42.h, vertical: 20.w),
-    enabledBorder: enabledInputBorder(),
+    labelStyle:
+        TextStyle(fontSize: 12.sp, color: kGrey, fontWeight: FontWeight.w600),
+    contentPadding: EdgeInsets.symmetric(horizontal: 42.w, vertical: 15.h),
+    enabledBorder: outlineInputBorder,
     focusedBorder: enabledInputBorder(),
     border: outlineInputBorder,
   );

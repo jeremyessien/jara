@@ -7,7 +7,7 @@ const kRed = Color(0xffF82020);
 const kBlue = Color(0xff3A77EE);
 const kPurple = Color(0xff6039F1);
 
-const kBlack = Color(0xff00000);
+const kBlack = Color(0xff000000);
 const kGrey = Color(0xffC4C4C4);
 
 final kGreenLight = Color(0xFF009933).withOpacity(0.5);
@@ -65,14 +65,14 @@ final textFieldDecoration = InputDecoration(
 
 OutlineInputBorder enabledInputBorder() {
   return OutlineInputBorder(
-    borderRadius: BorderRadius.circular(4),
+    borderRadius: BorderRadius.circular(6),
     borderSide: const BorderSide(color: kGreen),
   );
 }
 
 OutlineInputBorder outlineInputBorder() {
   return OutlineInputBorder(
-    borderRadius: BorderRadius.circular(4),
+    borderRadius: BorderRadius.circular(6),
     borderSide: const BorderSide(color: kGrey),
   );
 }

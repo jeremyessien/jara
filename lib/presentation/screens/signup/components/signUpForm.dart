@@ -19,6 +19,7 @@ class _SignUpFormState extends State<SignUpForm> {
       child: Column(
         children: [
           TextFormField(
+            cursorColor: kBlack,
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
               label: Text('Email address'),
@@ -31,7 +32,14 @@ class _SignUpFormState extends State<SignUpForm> {
             keyboardType: TextInputType.visiblePassword,
             decoration: InputDecoration(
               label: const Text('Password'),
-              suffixIcon: SvgPicture.asset('assets/eye.svg'),
+              suffixIcon: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.remove_red_eye_sharp,
+                  color: kGrey,
+                  size: 30.h,
+                ),
+              ),
             ),
           ),
           SizedBox(
@@ -49,9 +57,16 @@ class _SignUpFormState extends State<SignUpForm> {
 
               //       });
               //     }),
-              const Text('I have a referral code'),
+              Text(
+                'I have a referral code',
+                style: TextStyle(color: kPurple, fontSize: 11.sp),
+              ),
               GestureDetector(
-                  onTap: () {}, child: const Text('Forgot Password')),
+                  onTap: () {},
+                  child: Text(
+                    'Forgot Password',
+                    style: TextStyle(color: kBlack, fontSize: 11.sp),
+                  )),
             ],
           ),
           Visibility(
@@ -65,20 +80,28 @@ class _SignUpFormState extends State<SignUpForm> {
             ),
           ),
           Row(
-            children: const [
+            children: [
               //  By clicking on this button, you agree to the ‘Terms and Conditions’ of the Jara Platform
               Text.rich(
                 TextSpan(
                   text: 'By clicking on this button, you agree to the ',
+                  style: TextStyle(color: kBlack, fontSize: 11.sp),
                   children: [
                     TextSpan(
-                        text: "'Terms and Conditions' ",
-                        style: TextStyle(color: kPurple)),
-                    TextSpan(text: 'of the Jara Platform'),
+                      text: "'Terms and Conditions' ",
+                      style: TextStyle(color: kPurple, fontSize: 11.sp),
+                    ),
+                    TextSpan(
+                      text: 'of the Jara Platform',
+                      style: TextStyle(color: kBlack, fontSize: 11.sp),
+                    ),
                   ],
                 ),
               )
             ],
+          ),
+          SizedBox(
+            height: 10.h,
           ),
           DefaultBtn(
             press: () {},
@@ -86,7 +109,7 @@ class _SignUpFormState extends State<SignUpForm> {
             color: kGreenLight,
           ),
           SizedBox(
-            height: 5.h,
+            height: 10.h,
           ),
           const Text.rich(
             TextSpan(

@@ -10,18 +10,27 @@ class TextDiver extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Divider(
-          color: kGrey,
+        Expanded(
+          child: Container(
+            height: 1,
+            color: kGrey,
+            width: double.maxFinite,
+          ),
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 5.w),
           child: Text(
             text,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontWeight: FontWeight.bold, color: kBlack, fontSize: 12.sp),
           ),
         ),
-        const Divider(
-          color: kGrey,
+        Expanded(
+          child: Container(
+            height: 1,
+            color: kGrey,
+            width: double.maxFinite,
+          ),
         ),
       ],
     );

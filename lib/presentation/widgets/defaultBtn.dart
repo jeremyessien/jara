@@ -20,7 +20,7 @@ class DefaultBtn extends StatelessWidget {
       onTap: press,
       child: Container(
         width: double.infinity,
-        height: 50.h,
+        height: 55.h,
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(5),
@@ -30,7 +30,7 @@ class DefaultBtn extends StatelessWidget {
               style: TextStyle(
                   color: textColor,
                   fontWeight: FontWeight.bold,
-                  fontSize: 16.sp)),
+                  fontSize: 14.sp)),
         ),
       ),
     );

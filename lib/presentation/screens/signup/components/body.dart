@@ -21,19 +21,17 @@ class _SignUpBodyState extends State<SignUpBody> {
       padding: EdgeInsets.symmetric(horizontal: kPadding),
       child: Column(
         children: [
-          SizedBox(
-            height: 20.h,
-          ),
           Image.asset('assets/logo.png'),
           SizedBox(
             height: 30.h,
           ),
-          const Text(
+          Text(
             'Sign Up',
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontWeight: FontWeight.bold, fontSize: 18.sp, color: kBlack),
           ),
           SizedBox(
-            height: 10.h,
+            height: 15.h,
           ),
           DefaultBtn(
             color: kRed,
@@ -52,6 +50,7 @@ class _SignUpBodyState extends State<SignUpBody> {
             height: 10.h,
           ),
           DefaultBtn(
+            color: kBlack,
             press: () {},
             text: 'Sign Up with App ID',
           ),

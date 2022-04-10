@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jara/presentation/screens/home/home.dart';
+import 'package:jara/presentation/screens/signup/signup.dart';
 
 import 'presentation/helpers/theme.dart';
 
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Jara',
         theme: theme(),
-        home: const HomeScreen(),
+        home: const SignUpScreen(),
       ),
     );
   }
