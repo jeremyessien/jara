@@ -9,6 +9,10 @@ const kPurple = Color(0xff6039F1);
 
 const kBlack = Color(0xff000000);
 const kGrey = Color(0xffC4C4C4);
+const headStyle = TextStyle(
+  color: kGrey,
+  fontSize: 15,
+);
 
 final kGreenLight = const Color(0xFF009933).withOpacity(0.5);
 const kPrimaryGradientColor = LinearGradient(
@@ -20,6 +24,8 @@ const kSecondaryColor = Color(0xFF979797);
 const kTextColor = Color(0xFF757575);
 
 const kAnimationDuration = Duration(milliseconds: 200);
+const kStyle =
+    TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: kBlack);
 
 final headingStyle = TextStyle(
   fontSize: 28.sp,
@@ -27,7 +33,11 @@ final headingStyle = TextStyle(
   color: Colors.white,
   height: 1.5,
 );
-
+const divide = Divider(
+  color: kGrey,
+  height: 10,
+  thickness: 1,
+);
 const defaultDuration = Duration(milliseconds: 250);
 final kPadding = 20.w;
 
