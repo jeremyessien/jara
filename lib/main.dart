@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:jara/presentation/screens/Authentication/signup/signup.dart';
-import 'package:jara/presentation/screens/onboarding/onboard.dart';
-
+import 'package:jara/presentation/screens/Authentication/signup/signup.dart';
+// import 'package:jara/presentation/screens/onboarding/onboard.dart';
 import 'presentation/helpers/theme.dart';
 
 bool? seenOnboard;
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Jara',
         theme: theme(),
-        home: const Onboard(),
+        home: const SignUpScreen(),
       ),
     );
   }

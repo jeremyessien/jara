@@ -1,124 +1,50 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_onboard/flutter_onboard.dart';
-import 'package:jara/presentation/helpers/constants.dart';
-import 'package:jara/presentation/screens/Authentication/signup/signup.dart';
-import 'package:get/get.dart';
+// import 'package:flutter_onboard/flutter_onboard.dart';
+import 'package:jara/presentation/screens/onboarding/components/screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:jara/presentation/helpers/constants.dart';
+// import 'package:jara/presentation/screens/Authentication/signup/signup.dart';
+// import 'package:get/get.dart';
 
-class Onboarding extends StatefulWidget {
-  const Onboarding({Key? key}) : super(key: key);
+class Onboarding extends StatelessWidget {
+  Onboarding({Key? key}) : super(key: key);
+  final PageController pageController = PageController(initialPage: 0);
+  final List<IntroModel> introPageList = ([
+    IntroModel(
+        'Shop more, Save more',
+        ' All items in the Jara Store are marked down which means that you save everytime you shop. You can do more with your reward points than ever before.',
+        'assets/shop.png'),
+    IntroModel(
+        'Receive Discounts',
+        ' You receive discounts and deals from your favourite stores which means that you save more of your money everytime you shop on Jara.',
+        'assets/discount.png'),
+    IntroModel(
+        'Share Rewards and Deals',
+        'You can shop from select stores using your accumulated points on your Jara Discount Card. You can also give the gift of a Jara Card to your loved ones.',
+        'assets/share.png'),
+    IntroModel(
+        'Shop for anything',
+        'You can go through our Jara Stores to search for anything you want from clothing to spa visits all on your Jara app.',
+        'assets/webshop.png'),
+    IntroModel(
+        'Earn reward points',
+        'You can earn Jara points everytime you shop from one of our select sellers. You can also buy with your accumulated Jara points',
+        'assets/online.png')
+  ]);
+  var currentShowIndex = 0;
 
-  @override
-  _OnboardingState createState() => _OnboardingState();
-}
-
-class _OnboardingState extends State<Onboarding> {
-  final PageController pageController = PageController();
   @override
   Widget build(BuildContext context) {
-    return OnBoard(
-      pageController: pageController,
-      // // // Either Provide onSkip Callback or skipButton Widget to handle skip state
-      // onSkip: () {
-      //   // print('skipped');
-      // },
-      // // // Either Provide onDone Callback or nextButton Widget to handle done state
-      // onDone: () {
-      //   // print('done tapped');
-      // },
-      onBoardData: onBoardData,
-      titleStyles: const TextStyle(
-        color: kBlack,
-        fontSize: 18,
-        fontWeight: FontWeight.w900,
-        letterSpacing: 0.15,
-      ),
-      descriptionStyles: TextStyle(
-        fontSize: 16,
-        color: kBlack,
-      ),
-      pageIndicatorStyle: const PageIndicatorStyle(
-        width: 100,
-        inactiveColor: kGrey,
-        activeColor: kGreen,
-        inactiveSize: Size(8, 8),
-        activeSize: Size(12, 12),
-      ),
-      // skipButton: TextButton(
-      //   onPressed: () {
-      //     // print('skipButton pressed');
-      //   },
-      //   child: const Text(
-      //     "Skip",
-      //     style: TextStyle(color: kBlack),
-      //   ),
-      // ),
-      // Either Provide onDone Callback or nextButton Widget to handle done state
-      nextButton: OnBoardConsumer(
-        builder: (context, ref, child) {
-          final state = ref.watch(onBoardStateProvider);
-          return InkWell(
-            onTap: () => _onNextTap(state),
-            child: Container(
-              width: 230,
-              height: 50,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: kGreen,
-              ),
-              child: TextButton(
-                onPressed: () => Get.to(() => SignUpScreen()),
-                child: Text(
-                  state.isLastPage ? 'Next' : 'Done',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-          );
-        },
-      ),
-      skipButton: TextButton(
-        onPressed: () => Get.to(() => SignUpScreen()),
-        child: const Text(
-          "Skip",
-          style: TextStyle(color: kBlack),
-        ),
-      ),
+    return Column(
+      children: [
+        SizedBox(height: 20.h),
+        Expanded(
+            child: PageView(
+          controller: pageController,
+          physics: BouncingScrollPhysics(),
+          pageSnapping: true,
+        )),
+      ],
     );
   }
-
-  void _onNextTap(OnBoardState onBoardState) {
-    if (!onBoardState.isLastPage) {
-      pageController.animateToPage(
-        onBoardState.page + 1,
-        duration: const Duration(milliseconds: 250),
-        curve: Curves.easeInOutSine,
-      );
-    } else {
-      //print("nextButton pressed");
-    }
-  }
 }
-
-final List<OnBoardModel> onBoardData = [
-  const OnBoardModel(
-    title: "Set your own goals and get better",
-    description: "Goal support your motivation and inspire you to work harder",
-    imgUrl: "assets/logo.png",
-  ),
-  const OnBoardModel(
-    title: "Track your progress with statistics",
-    description:
-        "Analyse personal result with detailed chart and numerical values",
-    imgUrl: 'assets/forgot.png',
-  ),
-  const OnBoardModel(
-    title: "Create photo comparision and share your results",
-    description:
-        "Take before and after photos to visualize progress and get the shape that you dream about",
-    imgUrl: 'assets/logo.png',
-  ),
-];
