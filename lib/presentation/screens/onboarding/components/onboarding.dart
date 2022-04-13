@@ -64,14 +64,12 @@ class _OnboardingState extends State<Onboarding> {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
-                gradient: const LinearGradient(
-                  colors: [kWhite, kGreen],
-                ),
+                color: kGreen,
               ),
-              child: ElevatedButton(
+              child: TextButton(
                 onPressed: () => Get.to(() => SignUpScreen()),
                 child: Text(
-                  state.isLastPage ? "Done" : "Next",
+                  state.isLastPage ? 'Next' : 'Done',
                   style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -81,6 +79,13 @@ class _OnboardingState extends State<Onboarding> {
             ),
           );
         },
+      ),
+      skipButton: TextButton(
+        onPressed: () => Get.to(() => SignUpScreen()),
+        child: const Text(
+          "Skip",
+          style: TextStyle(color: kBlack),
+        ),
       ),
     );
   }
@@ -102,18 +107,18 @@ final List<OnBoardModel> onBoardData = [
   const OnBoardModel(
     title: "Set your own goals and get better",
     description: "Goal support your motivation and inspire you to work harder",
-    imgUrl: "assets/images/weight.png",
+    imgUrl: "assets/logo.png",
   ),
   const OnBoardModel(
     title: "Track your progress with statistics",
     description:
         "Analyse personal result with detailed chart and numerical values",
-    imgUrl: 'assets/images/graph.png',
+    imgUrl: 'assets/forgot.png',
   ),
   const OnBoardModel(
     title: "Create photo comparision and share your results",
     description:
         "Take before and after photos to visualize progress and get the shape that you dream about",
-    imgUrl: 'assets/images/phone.png',
+    imgUrl: 'assets/logo.png',
   ),
 ];
