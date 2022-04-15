@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jara/presentation/screens/signup/components/signUpForm.dart';
+import 'package:jara/presentation/screens/Authentication/signup/components/signUpForm.dart';
 import 'package:jara/presentation/widgets/defaultBtn.dart';
+import 'package:jara/presentation/widgets/oulinedBtn.dart';
 import 'package:jara/presentation/widgets/textDivider.dart';
 
 import '../../../../helpers/constants.dart';
@@ -36,26 +37,28 @@ class _SignUpBodyState extends State<SignUpBody> {
           SizedBox(
             height: 15.h,
           ),
-          DefaultBtn(
-            color: kRed,
+          OutlinedBtn(
             press: () {},
-            text: 'Sign Up with Google',
+            title: 'Sign Up with Google',
+            textColor: kRed,
+            image: 'assets/google.png',
           ),
           SizedBox(
             height: 10.h,
           ),
-          DefaultBtn(
-            color: kBlue,
+          OutlinedBtn(
             press: () {},
-            text: 'Sign Up with Facebook',
+            title: 'Sign Up with Facebook',
+            textColor: kBlue,
+            image: 'assets/facebook.png',
           ),
           SizedBox(
             height: 10.h,
           ),
-          DefaultBtn(
-            color: kBlack,
+          OutlinedBtn(
             press: () {},
-            text: 'Sign Up with App ID',
+            title: 'Sign Up with Apple ID',
+            image: 'assets/apple.png',
           ),
           SizedBox(
             height: 30.h,
