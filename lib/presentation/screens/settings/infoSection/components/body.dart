@@ -9,14 +9,16 @@ class InfoBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Column(
-        children: [
-          buildInfoOptions(context, 'About Jara'),
-          divide,
-          buildInfoOptions(context, 'FAQs'),
-          divide,
-          buildInfoOptions(context, 'Help Center')
-        ],
+      child: Card(
+        child: Column(
+          children: [
+            buildInfoOptions(context, 'About Jara'),
+            divide,
+            buildInfoOptions(context, 'FAQs'),
+            divide,
+            buildInfoOptions(context, 'Help Center')
+          ],
+        ),
       ),
     );
   }

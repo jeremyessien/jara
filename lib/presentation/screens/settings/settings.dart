@@ -14,7 +14,7 @@ class _SetupState extends State<Setup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kGrey,
+      // backgroundColor: ,
       appBar: AppBar(
         title: const Text(
           'Settings',
@@ -28,7 +28,7 @@ class _SetupState extends State<Setup> {
         ),
         // appBarTheme:AppBarTheme(),
       ),
-      body: const SafeArea(child: EditSettings()),
+      body: Container(child: EditSettings()),
     );
   }
 }

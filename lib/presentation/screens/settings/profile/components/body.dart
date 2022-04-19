@@ -84,7 +84,7 @@ class _EditProfileState extends State<EditProfile> {
               ),
               DefaultBtn(
                 press: () {},
-                text: 'Save',
+                text: 'Save changes',
                 color: kGreenLight,
               )
             ],

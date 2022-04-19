@@ -14,11 +14,11 @@ class _EditFormState extends State<EditForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kGrey,
+      backgroundColor: kWhite,
       appBar: AppBar(
         title: const Text(
-          'Edit Settings',
-          style: kStyle,
+          'Profile',
+          style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
         ),
         leading: IconButton(
           onPressed: () => Get.back(),

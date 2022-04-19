@@ -17,40 +17,38 @@ class LogoutBody extends StatefulWidget {
 class _LogoutBodyState extends State<LogoutBody> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Card(
-        child: Column(
-          children: [
-            SvgPicture.asset('assets/log.svg'),
-            const Text(
-              'Logout',
-              style: TextStyle(fontWeight: FontWeight.bold),
+    return AlertDialog(
+      content: Column(
+        children: [
+          SvgPicture.asset('assets/log.svg'),
+          const Text(
+            'Logout',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          const Divider(),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: kPadding),
+            child: const Text('Do you wish to logout of Jara?'),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: kPadding),
+            child: DefaultBtn(
+              press: () => Get.to(() => SignUpScreen()),
+              text: 'Yes, Logout',
+              color: kGreen,
             ),
-            const Divider(),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: kPadding),
-              child: const Text('Do you wish to logout of Jara?'),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: kPadding),
-              child: DefaultBtn(
-                press: () => Get.to(() => SignUpScreen()),
-                text: 'Yes, Logout',
-                color: kGreen,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: kPadding),
+            child: GestureDetector(
+              onTap: () => Get.to(() => const EditSettings()),
+              child: const Text(
+                'No, take me back',
+                style: kStyle,
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: kPadding),
-              child: GestureDetector(
-                onTap: () => Get.to(() => const EditSettings()),
-                child: const Text(
-                  'No, take me back',
-                  style: kStyle,
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

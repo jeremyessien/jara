@@ -15,31 +15,46 @@ class InviteSent extends StatefulWidget {
 class _InviteSentState extends State<InviteSent> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Card(
-        child: Column(
-          children: [
-            SvgPicture.asset('assets/invite.svg'),
-            const Text(
-              'Invite Sent!',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            const Divider(),
-            Padding(
+    // showDialog(context: context)
+    return AlertDialog(
+      backgroundColor: kWhite,
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SvgPicture.asset('assets/invite.svg'),
+          const SizedBox(
+            height: 10.0,
+          ),
+          const Divider(),
+          const Text(
+            'Invite Sent!',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10.0,
+          ),
+          Padding(
               padding: EdgeInsets.symmetric(horizontal: kPadding),
               child: const Text(
-                  'Thank you for spreading the word about Jara. Find more things to do by clicking on the button below.'),
+                'Thank you for spreading the word about Jara. Find more things to do by clicking on the button below.',
+                style: TextStyle(
+                  fontSize: 13.0,
+                  fontWeight: FontWeight.normal,
+                ),
+              )),
+          const SizedBox(
+            height: 20.0,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: kPadding),
+            child: DefaultBtn(
+              press: () => Get.to(() => HomePage()),
+              text: 'Explore',
+              color: kGreen,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: kPadding),
-              child: DefaultBtn(
-                press: () => Get.to(() => HomePage()),
-                text: 'Explore',
-                color: kGreen,
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

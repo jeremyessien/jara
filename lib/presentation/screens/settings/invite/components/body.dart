@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jara/presentation/helpers/constants.dart';
 import 'package:jara/presentation/widgets/defaultBtn.dart';
 import 'package:get/get.dart';
@@ -18,15 +18,18 @@ class _InviteBodyState extends State<InviteBody> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: kPadding),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            height: 10.h,
+          const SizedBox(
+            height: 20,
           ),
           const Text(
             'Invite a friend',
+            textAlign: TextAlign.start,
             style: TextStyle(
               color: kBlack,
               fontWeight: FontWeight.w500,
+              fontSize: 25,
             ),
           ),
           const Text(
@@ -35,6 +38,9 @@ class _InviteBodyState extends State<InviteBody> {
               fontSize: 15.0,
               color: kBlack,
             ),
+          ),
+          const SizedBox(
+            height: 30.0,
           ),
           Expanded(
             child: TextFormField(
@@ -46,7 +52,10 @@ class _InviteBodyState extends State<InviteBody> {
             press: () => Get.to(() => const InviteSent()),
             text: ' Invite ',
             color: kGreenLight,
-          )
+          ),
+          const SizedBox(
+            height: 30,
+          ),
         ],
       ),
     );

@@ -1,6 +1,10 @@
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:jara/presentation/helpers/constants.dart';
+// import 'package:jara/presentation/screens/settings/components/scrollable.dart';
 import 'package:jara/presentation/screens/settings/infoSection/components/body.dart';
+import 'package:jara/presentation/screens/settings/profile/editForm.dart';
 import 'package:jara/presentation/screens/settings/setup.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,19 +45,20 @@ class _EditSettingsState extends State<EditSettings> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
+    return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const SizedBox(
-              height: 10.0,
+              height: 5.0,
             ),
             Row(
               children: [
                 SvgPicture.asset('assets/profile.svg'),
-                SizedBox(
-                  width: 10.sp,
+                const SizedBox(
+                  width: 10.0,
                 ),
                 Column(
                   children: [
@@ -63,11 +68,12 @@ class _EditSettingsState extends State<EditSettings> {
                     // ),
                     GestureDetector(
                         onTap: () => Get.to(() => const EditProfile()),
-                        child: ElevatedButton(
-                          onPressed: () {},
+                        child: TextButton(
+                          onPressed: () => Get.to(() => const EditForm()),
                           child: const Text('Edit Profile',
                               style: TextStyle(
                                 color: kWhite,
+                                backgroundColor: kGreen,
                               )),
                         ))
                   ],
@@ -79,9 +85,10 @@ class _EditSettingsState extends State<EditSettings> {
             ),
             const Text(
               'GENERAL',
+              textAlign: TextAlign.left,
               style: headStyle,
             ),
-            Expanded(
+            Card(
               child: Column(children: [
                 buildNotificationOption(
                     'Allow Push Notification', valNotifyOne, onChangeFunction),
@@ -99,7 +106,8 @@ class _EditSettingsState extends State<EditSettings> {
               'LEGAL',
               style: headStyle,
             ),
-            Expanded(
+            Card(
+              elevation: 0.5,
               child: Column(
                 children: [
                   buildSettingsOption(context, 'Privacy Policy'),
@@ -116,10 +124,10 @@ class _EditSettingsState extends State<EditSettings> {
               style: headStyle,
             ),
             const InfoBody(),
-            SizedBox(
-              height: 10.h,
+            const SizedBox(
+              height: 10,
             ),
-            Expanded(
+            Card(
               child: GestureDetector(
                 onTap: () => Get.to(() => const LogOut()),
                 child: const Text(
@@ -128,7 +136,7 @@ class _EditSettingsState extends State<EditSettings> {
                 ),
               ),
             ),
-            Expanded(
+            Card(
               child: GestureDetector(
                 onTap: () => Get.to(() => const DeleteAccount()),
                 child: const Text(
@@ -138,8 +146,6 @@ class _EditSettingsState extends State<EditSettings> {
               ),
             ),
           ],
-        ),
-      ),
-    );
+        ));
   }
 }

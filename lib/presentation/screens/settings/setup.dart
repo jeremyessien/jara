@@ -16,7 +16,7 @@ Padding buildNotificationOption(
           style: kStyle,
         ),
         Transform.scale(
-          scale: 0.7,
+          scale: 0.8,
           child: CupertinoSwitch(
             activeColor: kGreen,
             trackColor: kGrey,
@@ -34,7 +34,7 @@ Padding buildNotificationOption(
 GestureDetector buildAccountOption(BuildContext context, String title) {
   return GestureDetector(
     child: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -43,7 +43,7 @@ GestureDetector buildAccountOption(BuildContext context, String title) {
             style: kStyle,
           ),
           IconButton(
-            icon: Icon(Icons.arrow_forward_ios),
+            icon: const Icon(Icons.arrow_forward_ios),
             onPressed: () => Get.to(() => const InviteScreen()),
           ),
         ],
@@ -56,7 +56,7 @@ GestureDetector buildSettingsOption(BuildContext context, String title) {
   return GestureDetector(
     onTap: () {},
     child: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Text(
         title,
         style: kStyle,
