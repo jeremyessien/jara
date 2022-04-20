@@ -46,7 +46,7 @@ class _SignInFormState extends State<SignInForm> {
           ),
           DefaultBtn(
             press: () {},
-            text: 'Sign Up',
+            text: 'Confirm',
             color: kGreenLight,
           ),
           SizedBox(

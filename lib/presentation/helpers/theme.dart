@@ -22,7 +22,7 @@ InputDecorationTheme inputDecorationTheme() {
   return InputDecorationTheme(
     labelStyle:
         TextStyle(fontSize: 12.sp, color: kGrey, fontWeight: FontWeight.w600),
-    contentPadding: EdgeInsets.symmetric(horizontal: 42.w, vertical: 15.h),
+    contentPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
     enabledBorder: outlineInputBorder,
     focusedBorder: enabledInputBorder(),
     border: outlineInputBorder,

@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jara/presentation/screens/onboarding/components/splashScreen.dart';
 // import 'package:jara/presentation/screens/settings/settings.dart';
+// import 'package:jara/presentation/screens/Authentication/signup/signup.dart';
+// import 'package:jara/presentation/screens/topUp/topUp.dart';
 import 'presentation/helpers/theme.dart';
 
 void main() async {
@@ -25,6 +27,7 @@ class MyApp extends StatelessWidget {
         title: 'Jara',
         theme: theme(),
         home: const SplashScreen(),
+
       ),
     );
   }

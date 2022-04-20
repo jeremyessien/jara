@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jara/presentation/screens/Authentication/signIn/components/signInForm.dart';
+import 'package:jara/presentation/widgets/oulinedBtn.dart';
 
 import '../../../../helpers/constants.dart';
 
@@ -42,8 +43,71 @@ class _SignInBodyState extends State<SignInBody> {
             height: 40.h,
           ),
           const SignInForm(),
+          SizedBox(
+            height: 40.h,
+          ),
+          SizedBox(
+            height: 40.h,
+          ),
         ],
       ),
     ));
+  }
+}
+
+class Card extends StatelessWidget {
+  const Card({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          // decoration: Box,
+          color: kGreen,
+          padding: const EdgeInsets.all(10),
+          child: Row(
+            children: [
+              const Expanded(
+                child: FlutterLogo(),
+                flex: 1,
+              ),
+              Expanded(
+                flex: 3,
+                child: Column(
+                  children: [
+                    const Text('Fitness Center Yoga Studio'),
+                    const Text('Fitness Center Yoga Studio'),
+                    Row(
+                      children: const [
+                        Text('* * * * *'),
+                        Text('4.6'),
+                        Text('(23,450)'),
+                      ],
+                    ),
+                    const Text(
+                        'Fitness Center Yoga Studio Fitness Center Yoga Studio'),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          bottom: 0,
+          right: 0,
+          child: Container(
+            padding: EdgeInsets.all(8),
+            color: kWhite,
+            child: Column(
+              children: [
+                Text('N5000'),
+                Text('per person'),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }
