@@ -24,10 +24,13 @@ const kPrimaryGradientColor = LinearGradient(
 );
 const kSecondaryColor = Color(0xFF979797);
 const kTextColor = Color(0xFF757575);
+const kWalletContainerBackgroundG = Color(0xffABA7A7);
+const knotificationButtonColor = Color(0xffC2E0CC);
 
 const kAnimationDuration = Duration(milliseconds: 200);
 const kStyle =
     TextStyle(fontSize: 17, fontWeight: FontWeight.bold, color: kBlack);
+const kTextSyleW = TextStyle(color: Colors.white, fontSize: 14);
 
 final headingStyle = TextStyle(
   fontSize: 28.sp,
@@ -88,8 +91,8 @@ OutlineInputBorder outlineInputBorder() {
     borderSide: const BorderSide(color: kGrey),
   );
 }
+
 const OutlineInputBorder koutlineInputBorder = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(50)),
-    borderSide: BorderSide(color: Colors.grey, width: 1, style: BorderStyle.solid)
-);
-
+    borderSide:
+        BorderSide(color: Colors.grey, width: 1, style: BorderStyle.solid));
