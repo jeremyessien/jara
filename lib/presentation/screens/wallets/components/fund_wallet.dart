@@ -7,7 +7,7 @@ class FundWallet extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           alignment: Alignment.center,
           height: 280,
           width: 250,
